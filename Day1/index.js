@@ -117,3 +117,62 @@ for (let i = 0; i < arr.length; i++) {
     }
     // console.log(element, typeof element); 
 }
+
+// today's task
+// Swapping code
+let a = 10;
+let b = 20;
+
+let temp = a;
+a = b;
+b = temp;
+ console.log(a,b);
+
+
+ // Type Checker
+function typeChecker(input) {
+    if (typeof input === "number") {
+        console.log("This is a number");
+    } else if (typeof input === "string") {
+        console.log("This is a string");
+    }
+}
+
+typeChecker(22);
+typeChecker("Hrithicka");
+
+
+// Initial Creator
+let fullName = "John Doe";
+
+let names = fullName.split(" ");
+let initials = names[0][0] + names[1][0];
+
+console.log(initials); // JD
+
+
+// The Cleaner
+let messy = " Javascript is fun ";
+
+let clean = messy.trim().toLowerCase();
+
+console.log(clean); // javascript is fun
+
+
+// The Grocery List
+let cart = ["Rice", "Oil", "Sugar"];
+
+cart.push("Milk");
+cart.unshift("Eggs");
+cart.pop();
+
+console.log(cart);
+
+
+// Value finder
+let numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers.includes(30)); // true
+console.log(numbers.indexOf(50));  // 4
+
+
