@@ -94,3 +94,44 @@ console.log(colors.splice(1, 3));
 // console.log(colors.splice(Math.floor(Math.random() * (colors.length - 2)), 1));
 // let str = "Hello World";
 // console.log(str.slice(0, 5)); // "Hello"
+
+
+// Today's task
+//Guest List Formatter (template literals, array methods)
+let list = ["Host", "Hrithicka", "Agnes", "Akshayaa"];
+
+function formatGuests(names) {
+    names.shift(); 
+
+    let guests = names.map(name => `Guest: ${name}`);
+
+    return guests.join("\n");
+}
+console.log(formatGuests(list));
+
+
+// Logic gate (arrow functions, filters, math)
+let data = [10, "hello", 45, 60, "JS", 25, 80];
+
+const getHighNumbers = (arr) => {
+    let numbers = arr.filter(item => typeof item === "number");
+
+    let randomNum = Math.floor(Math.random() * 50) + 1;
+
+    let result = numbers.filter(num => num > randomNum);
+
+    return result;
+};
+console.log(getHighNumbers(data));
+
+
+// Price Calculator (type conversion, splice)
+let prices = ["100", "250", "300", "50"];
+
+prices.splice(prices.length - 1, 1);
+
+let numPrices = prices.map(price => Number(price));
+
+let total = numPrices.reduce((sum, price) => sum + price, 0);
+
+console.log(`Total Price: $${total}`);
