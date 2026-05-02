@@ -109,7 +109,60 @@ let val = "0.6";
 console.log(parseInt(val));
 console.log(parseFloat(val));
 
+// splice method
+let arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1); // Removes 1 element at index 2
+console.log(arr); 
+
+// reduce method 
+let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log("Sum of array elements:", sum); 
+
 // template literals
 let name = "Hrithicka";
 let greeting = `Hello, ${name}! Welcome to JavaScript.`;
 console.log(greeting);
+
+// DOM Manipulation
+// document.getElementById("myElement").innerText = "Hello, World!";
+// Example: const username = document.getElementById("username").value;
+
+// html, css, js connection
+// <input type="text" id="username">
+// <input type="password" id="password">
+// <button onclick="login()">Login</button>
+
+// linking js file
+// <script src="app.js"></script
+
+//making a separate page
+// app.html
+// <h1>Welcome to the App Page!</h1>
+// <script src="app.js"></script>
+
+// Event handling
+// function login() {
+//     const username = document.getElementById("username").value;
+//     const password = document.getElementById("password").value;
+
+//     if (username === "admin" && password === "password") {
+//         alert("Login successful!");
+//         window.location.href = "app.html";
+//     } else {
+//         alert("Invalid username or password.");
+//     }
+// }
+
+// login function in app.js
+//function login() {
+    // const username = document.getElementById("username").value;
+    // const password = document.getElementById("password").value;
+
+    // if (username === "admin" && password === "password") {
+        // alert("Login successful!");
+        // window.location.href = "app.html";
+    // } else {
+        // alert("Invalid username or password.");
+    // }
+// }
+
