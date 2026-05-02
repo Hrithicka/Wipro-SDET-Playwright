@@ -31,13 +31,13 @@ console.log("Sum of 5 and 10:", sum(5, 10)); // 15
 
 let arr = [1, 2, 3, 4, 5, "Aaryan"];
 // General method 
-// arr.filter(function(x) {
-//     return typeof x === "number";
-// }).map(function(y) {
-//     return y * 2;
-// }).forEach(function(abc) {
-//     console.log("Element after * 2:", abc * 2);
-// });
+arr.filter(function(x) {
+    return typeof x === "number";
+}).map(function(y) {
+    return y * 2;
+}).forEach(function(abc) {
+    console.log("Element after * 2:", abc * 2);
+});
 
 //  Using Callback Function
 arr.map(y => y * 2).forEach(abc => console.log("Element after * 2:", abc * 2));
