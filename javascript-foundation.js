@@ -57,7 +57,7 @@ switch(choice) {
 
 // Loops
 // For loop
-let arr = [1, "Aaryan", 3, true, 5];
+let arr = [1, "Hrithicka", 3, true, 5];
 let arr2 = [1, 2, 3, 4, 5];
 
 for (let i = 0; i < arr2.length; i++) {  
