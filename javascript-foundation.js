@@ -216,3 +216,15 @@ fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then(response => response.json()) // Convert the response to JSON
     .then(data => console.log(data)) // Log the data
     .catch(error => console.error("Error fetching data:", error)); // Handle any errors
+
+// Fetching API in JavaScript means getting data from an external server (like a website or database) and using it in your code.
+// It is used to connect your program to real-world data sources such as users, products, weather, jokes, etc.
+// fetch() → sends a request to an API link
+// API returns data (usually JSON format)
+// .then(res => res.json()) → converts response into usable JavaScript object
+// Then we can filter, modify, or display the data
+// Fetching API means: Getting data from the internet and using it in JavaScript.
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then(res => res.json())
+  .then(data => console.log(data));
