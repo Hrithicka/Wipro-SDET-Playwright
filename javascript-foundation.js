@@ -188,4 +188,10 @@ const myPromise = new Promise((resolve, reject) => {
 myPromise
   .then(res => console.log(res))
   .catch(err => console.error(err));
-  
+
+// Fetch API is a modern interface for making HTTP requests in JavaScript. It provides a more powerful and flexible way to interact with APIs compared to older methods like XMLHttpRequest.
+// Example of using Fetch API to get data from a public API
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(response => response.json()) // Convert the response to JSON
+    .then(data => console.log(data)) // Log the data
+    .catch(error => console.error("Error fetching data:", error)); // Handle any errors
