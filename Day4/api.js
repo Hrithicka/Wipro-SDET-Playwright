@@ -1,44 +1,3 @@
-// Asynchronous JavaScript
-// setTimeout function
-setTimeout(() => {
-    console.log("Data received");
-}, 5000);
-console.log("test");
-
-// setInterval function
-setInterval(() => {
-    console.log("Checking for new data...");
-}, 3000);
-
-// Promises object
-    function getData() {
-    return new Promise((resolve, reject) => {
-        if(2 > 3) {
-            setTimeout(() => {
-                resolve("Data received");
-            }, 2000);
-        } else {
-            reject('not working')
-        }
-    });
-}
-
-// Use .then() to handle success and .catch() to handle errors
-getData().then((data) => {
-    console.log(data);
-}).catch((error) => {
-    console.error("Error:", error);
-});
-
-// Fetch API 
-fetch("https://jsonplaceholder.typicode.com/todos")
-    .then(res => res.json()) // res -> string -> json)
-    .then(data => data.filter(d => d.id % 2 === 0))
-    .then(data => data.map(d => (d.title = "Hrithicka " + d.title)))
-    .then(data => console.log(data))
-    .catch(error => console.error("Error fetching data:", error));
- 
-
 // Fetching API with public API (Today's task)
 // 1) Cat Facts
 fetch("https://catfact.ninja/facts")
@@ -54,7 +13,7 @@ fetch("https://catfact.ninja/facts")
 fetch("https://dog.ceo/api/breeds/image/random/10")
   .then(res => res.json())
   .then(data => data.message)
-  .then(arr => arr.filter(url => url.includes("hound")))
+  .then(arr => arr.slice(0, 5))
   .then(arr => arr.map(url => "Dog: " + url))
   .then(data => console.log("Dogs:", data));
 
@@ -100,10 +59,29 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
   .then(data => console.log("Expensive Coins:", data));
 
 
-// 8) Numbers API
-fetch("http://numbersapi.com/1/30/date?json")
+// 8) Posts (Replacement for Bitcoin API)
+fetch("https://jsonplaceholder.typicode.com/posts")
   .then(res => res.json())
-  .then(obj => [obj]) // convert to array for filter/map
-  .then(arr => arr.filter(n => n.text.length > 20))
-  .then(arr => arr.map(n => n.text))
-  .then(data => console.log("Number Facts:", data));
+  .then(arr => arr.filter(p => p.id <= 5))
+  .then(arr => arr.map(p => p.title))
+  .then(data => console.log("Top Posts:", data))
+  .catch(console.error);
+
+
+  // 9) Quotes
+fetch("https://zenquotes.io/api/quotes")
+  .then(res => res.json())
+  .then(arr => arr.filter(q => q.q.length < 80))
+  .then(arr => arr.map(q => q.q))
+  .then(data => console.log("Short Quotes:", data))
+  .catch(console.error);
+
+
+  // 10) Space People
+fetch("http://api.open-notify.org/astros.json")
+  .then(res => res.json())
+  .then(obj => obj.people)
+  .then(arr => arr.filter(p => p.craft === "ISS"))
+  .then(arr => arr.map(p => p.name))
+  .then(data => console.log("Astronauts:", data))
+  .catch(console.error);
