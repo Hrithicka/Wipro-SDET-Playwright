@@ -166,3 +166,26 @@ console.log(greeting);
     // }
 // }
 
+// Asynchronous JavaScript
+// setTimeout, setInterval and Promises
+
+// setTimeout is a built-in JavaScript function that allows you to execute a function after a specified delay 
+setTimeout(() => {
+    console.log("Hello World");
+}, 1000);
+
+// setInterval is a built-in JavaScript function that allows you to execute a function repeatedly at specified intervals
+setInterval(() => {
+    console.log("Hello again");
+}, 2000);
+
+// Promises are a way to handle asynchronous operations in JavaScript. They represent a value that may be available now,
+// in the future, or never. A promise can be in one of three states: pending, fulfilled, or rejected.
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Done"), 1000);
+});
+
+myPromise
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+  
