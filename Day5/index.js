@@ -58,6 +58,3 @@ const i = setInterval(() => {
     console.log("Checking for new data...");
 }, 3000);
 clearInterval(i);
- 
- 
- 
