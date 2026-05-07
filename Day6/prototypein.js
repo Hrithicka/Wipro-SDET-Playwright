@@ -1,4 +1,4 @@
- 
+// prototype inheritance
 function person(name) {
     this.name = name;
 }
