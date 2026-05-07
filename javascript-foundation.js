@@ -420,3 +420,21 @@ console.log(myCoffeMachine.brew());
 // Used condition statements (if/else) to assign status.
 // Used Template Literal for payroll summary.
 // Used setTimeout() to delay output by 2000ms.
+
+// Prototype inheritance
+// It is a mechanism by which objects can inherit properties and methods from other objects. 
+// In JavaScript, every object has a prototype, which is another object that it inherits properties and methods from.
+// When you create a new object using a constructor function, the new object inherits properties and methods from the constructor's prototype. 
+// This allows you to define shared behavior for all instances of a constructor function without having to duplicate code for each instance.
+function person(name) {
+    this.name = name;
+}
+person.prototype.sayHi = function() {
+    console.log('hello ' + this.name);
+}
+const me = new person("Hrithicka");
+const you = new person("you");
+me.sayHi();
+you.sayHi();
+console.log(Object.getPrototypeOf(me) === person.prototype); // true
+console.log(me.sayHi === you.sayHi); // true
