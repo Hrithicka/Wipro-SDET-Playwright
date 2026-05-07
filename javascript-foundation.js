@@ -385,3 +385,38 @@ class CoffeMachine {
  
 const myCoffeMachine = new CoffeMachine();
 console.log(myCoffeMachine.brew());
+
+
+// Code practice (day 6)
+// Flight booking data cleaner
+// Used .map() to convert raw strings into objects.
+// Used .split() to separate cities and price.
+// Used Number() to convert price into number.
+// Used isNaN() to validate price.
+// Used .filter() to keep prices between 100 and 500.
+// Used .sort() for ascending order.
+// Used JSON.stringify() to convert final array into JSON string.
+
+// E-commerce discount applicator
+// Used callback function (isEligible) to check discount eligibility.
+// Used .map() to transform cart items.
+// Applied 10% discount using arithmetic operators.
+// Added new property isDiscounted.
+// Used Template Literal for summary message.
+// Used setTimeout() to delay output by 1000ms.
+
+// Movie stream analytics
+// Used .map() to convert raw movie strings into objects.
+// Used .split() to separate name, genre, and views.
+// Used Number() and isNaN() for validation.
+// Used .filter() to keep Action/Sci-Fi movies with more than 5000 views.
+// Used .sort() for descending order.
+// Used JSON.stringify() for final JSON output.
+
+// automated payroll processor
+// Used callback function (taxLogic) for tax calculation.
+// Used .map() to process employee data.
+// Calculated tax and net salary using arithmetic operations.
+// Used condition statements (if/else) to assign status.
+// Used Template Literal for payroll summary.
+// Used setTimeout() to delay output by 2000ms.

@@ -61,20 +61,19 @@ function applyPromo(cart, promoCallback) {
       const discount = product.price * 0.10;
       discountedCount++;
       totalSavings += discount;
+
       return {
-        ...product,
-
-        // Reduce price by 10%
+        name: product.name,
         price: product.price - discount,
-
-        // Add new property
+        category: product.category,
         isDiscounted: true
       };
     }
 
-    // Non-eligible items
     return {
-      ...product,
+      name: product.name,
+      price: product.price,
+      category: product.category,
       isDiscounted: false
     };
   });
@@ -191,9 +190,11 @@ function calculatePayroll(employees, taxCallback) {
       status = "Standard";
     }
     return {
-      ...employee,
-      netSalary,
-      status
+      id: employee.id,
+      name: employee.name,
+      salary: employee.salary,
+      netSalary: netSalary,
+      status: status
     };
   });
 
