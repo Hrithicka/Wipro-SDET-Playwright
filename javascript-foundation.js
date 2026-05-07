@@ -421,6 +421,7 @@ console.log(myCoffeMachine.brew());
 // Used Template Literal for payroll summary.
 // Used setTimeout() to delay output by 2000ms.
 
+
 // Prototype inheritance
 // It is a mechanism by which objects can inherit properties and methods from other objects. 
 // In JavaScript, every object has a prototype, which is another object that it inherits properties and methods from.
@@ -438,3 +439,49 @@ me.sayHi();
 you.sayHi();
 console.log(Object.getPrototypeOf(me) === person.prototype); // true
 console.log(me.sayHi === you.sayHi); // true
+
+
+// Callback function
+// A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
+// give different  simple examples
+function greetUser(name, callback) {
+    console.log('Hello ' + name);
+    callback();
+}
+function sayGoodbye() {
+    console.log('Goodbye!');
+}
+greetUser('Hrithicka', sayGoodbye);
+
+
+// stack and heap
+// Stack is a data structure that follows the Last In First Out (LIFO) principle. 
+// Heap is a memory area used for dynamic memory allocation where variables are stored as objects.
+// Primitive types (like numbers and strings) are stored in the stack, while objects and arrays are stored in the heap.
+let age = 22; // number --> Stack
+let name = "Hrithicka"; // string --> Stack
+let user = { // object --> Heap
+    name: "Hrithicka",
+    age: 22
+}
+
+// Primitive copy (Stack) 
+let x = 5;
+let y = x; // copy of value of x is stored in y
+
+// Reference copy (Heap)
+let obj1 = { name: "Hrithicka" }; // heap
+let obj2 = obj1;
+obj2.name = "aarthi";
+console.log(obj1.name); // obj1 and obj2 are referencing the same object in heap, so change in obj2 reflects in obj1
+
+
+// spread operator
+// The spread operator (...) allows you to expand an iterable (like an array or object) into individual elements. It is commonly used for copying arrays or objects, merging arrays, and passing elements as function arguments.
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1]; // creates a new array with the same elements as arr1
+console.log(arr2); // [1, 2, 3]
+
+let obj1 = { name: "Hrithicka", age: 22 };
+let obj2 = { ...obj1 }; // creates a new object with the same properties as obj1
+console.log(obj2); // { name: "Hrithicka", age: 22 }
