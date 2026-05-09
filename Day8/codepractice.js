@@ -571,11 +571,80 @@ testScope();
 
 // Callback functions and setTimeout
 // 1. Create a delayed greeting message using setTimeout.
+setTimeout(function () {
+
+    console.log("Hello! Welcome to JavaScript");
+
+}, 3000);
 
 // 2. Build a countdown timer.
+let count = 5;
+let timer = setInterval(function () {
+
+    console.log(count);
+
+    count--;
+
+    if (count < 0) {
+        clearInterval(timer);
+
+        console.log("Countdown Finished!");
+    }
+
+}, 1000);
 
 // 3. Create a callback-based calculator.
+const calc = {
+    sum: (...op) => op.reduce((acc, curr) => acc + curr, 0),
+    sub: (...op) => op.reduce((acc, curr) => acc - curr, 0),
+    mul: (...op) => op.reduce((acc, curr) => acc * curr, 1),
+    div: (...op) => op.reduce((acc, curr) => acc / curr, 1),
+};
 
+function calculator(operation, ...operands) {
+    return operation(...operands);
+}
+ 
+console.log(calculator(calc.sum, 1, 2, 3))
+ 
 // 4. Simulate food ordering system using callbacks.
+function placeOrder(callback) {
+    console.log("Order Placed");
+    callback();
+}
+
+function prepareFood(callback) {
+    console.log("Food Preparing");
+    callback();
+}
+
+function deliverFood() {
+    console.log("Food Delivered");
+}
+
+placeOrder(function () {
+    prepareFood(function () {
+        deliverFood();
+    });
+});
 
 // 5. Execute functions sequentially using callbacks.
+function firstTask(callback) {
+    console.log("First Task Completed");
+    callback();
+}
+
+function secondTask(callback) {
+    console.log("Second Task Completed");
+    callback();
+}
+
+function thirdTask() {
+    console.log("Third Task Completed");
+}
+
+firstTask(function () {
+    secondTask(function () {
+        thirdTask();
+    });
+});
