@@ -648,3 +648,153 @@ firstTask(function () {
         thirdTask();
     });
 });
+
+
+// Arrow functions
+// 1. Convert normal functions into arrow functions.
+// Normal Function
+function add(a, b) {
+    return a + b;
+}
+console.log(add(10, 5));
+
+// Arrow Function
+const addition = (a, b) => {
+    return a + b;
+};
+console.log(addition(10, 5));
+
+// 2. Create one-line arrow functions with implicit return.
+const square = num => num * num;
+console.log("Square =", square(5));
+
+// 3. Use arrow functions with map().
+let numbers = [1, 2, 3, 4, 5];
+let doubledNumbers = numbers.map(num => num * 2);
+console.log(doubledNumbers);
+
+// 4. Build an even/odd checker using arrow functions.
+const checkEvenOdd = num => {
+
+    if (num % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+};
+
+console.log(checkEvenOdd(8));
+console.log(checkEvenOdd(5));
+
+// 5. Create a student grade calculator using arrow functions.
+const calculateGrade = marks => {
+
+    if (marks >= 90) {
+        return "A Grade";
+    } else if (marks >= 75) {
+        return "B Grade";
+    } else if (marks >= 50) {
+        return "C Grade";
+    } else {
+        return "Fail";
+    }
+};
+
+console.log(calculateGrade(92));
+console.log(calculateGrade(68));
+
+
+// map(), filter(), forEach()
+// 1. Double all numbers in an array using map().
+let numbers = [1, 2, 3, 4, 5];
+let doubledNumbers = numbers.map(num => num * 2);
+
+console.log(doubledNumbers);
+
+// 2. Filter all students scoring above 80 marks.
+let students = [
+    { name: "Hrithicka", marks: 75 },
+    { name: "Navya", marks: 92 },
+    { name: "Agnes", marks: 85 },
+    { name: "Akshayaa", marks: 60 }
+];
+let topStudents = students.filter(student => student.marks > 80);
+
+console.log(topStudents);
+
+// 3. Print all array values using forEach().
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+fruits.forEach(fruit => {
+    console.log(fruit);
+});
+
+// 4. Convert array of names into uppercase.
+let names = ["Hrithicka", "agnes", "akshayaa"];
+let upperCaseNames = names.map(name => name.toUpperCase());
+
+console.log(upperCaseNames);
+
+// 5. Extract only even numbers using filter().
+let values = [10, 15, 22, 33, 40, 55, 60];
+let evenNumbers = values.filter(num => num % 2 === 0);
+
+console.log(evenNumbers);
+
+
+// Primitive vs Reference types
+// 1. Create examples showing primitive copying behavior.
+let a = 10;
+let b = a;
+b = 20;
+
+console.log("a =", a);
+console.log("b =", b);
+
+// 2. Create examples showing object reference behavior.
+let person1 = {
+    name: "Hrithicka"
+};
+let person2 = person1;
+person2.name = "Aarthi";
+
+console.log(person1);
+console.log(person2);
+
+// 3. Clone an object without affecting original object.
+let originalObject = {
+    name: "Hrithicka",
+    age: 22
+};
+
+let clonedObject = {
+    ...originalObject
+};
+
+clonedObject.name = "Agnes";
+
+console.log("Original Object =", originalObject);
+console.log("Cloned Object =", clonedObject);
+
+// 4. Compare arrays using reference equality.
+let arr1 = [1, 2, 3];
+let arr2 = [1, 2, 3];
+
+console.log(arr1 === arr2);
+
+// 5. Demonstrate shallow copy using spread operator.
+let user = {
+    name: "Hrithicka",
+    address: {
+        city: "Chennai"
+    }
+};
+
+let copiedUser = {
+    ...user
+};
+
+copiedUser.name = "Agnes";
+
+console.log(user);
+console.log(copiedUser);
