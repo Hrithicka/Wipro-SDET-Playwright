@@ -108,3 +108,18 @@ names.addItems("Hrithicka");
 names.addItems("Agnes");
 names.addItems("Akshayaa");
 console.log(names.getItem(0), names.getItem(1), names.getItem(2), names.getItem(3)); // undefined for index 3
+
+// Interface with length property
+interface HasLength {
+    length: number;
+}
+
+// generics with constraints | extends keyword
+// T -> property .length --> string, arrays
+function logLength<T extends HasLength>(arg: T): void { 
+    console.log(arg.length);
+}
+
+logLength("Hrithicka"); // string --> length
+logLength([1, 2, 3]); // array --> length
+// logLength(10); // number --> X
