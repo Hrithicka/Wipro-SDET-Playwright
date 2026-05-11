@@ -133,4 +133,28 @@ const student: Student = {
 
 console.log(student);
 
+// Interface with Length Property
+// Here, HasLength interface tells that the datatype must contain a length property.
+// Any datatype having length property can use the generic function.
+interface HasLength {
+    length: number;
+}
+
+// Generics with Constraints
+// Generics with constraints restrict generic values using extends keyword.
+// It allows only datatypes that satisfy specific conditions.
+
+function logLength<T extends HasLength>(arg: T): void {
+    console.log(arg.length);
+}
+
+// String contains length property.
+logLength("Hrithicka");
+
+// Array also contains length property.
+logLength([1, 2, 3]);
+
+// Number does not contain length property.
+// logLength(10); // error
+
 
