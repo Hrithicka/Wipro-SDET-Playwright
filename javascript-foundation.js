@@ -571,3 +571,112 @@ function f() {
 }
 f();
 console.log(sum);
+
+
+// Advance JS concepts
+// Parameters are variables used inside function.
+// They receive values when function is called.
+function greet(name){
+   console.log(`Hello ${name}`);
+}
+greet("Hrithicka");
+
+// Default paramter
+// If user does not pass value, default value will be used.
+function welcome(name = "Guest"){
+   console.log(`Welcome ${name}!`);
+}
+welcome("Hrithicka"); // Welcome Hrithicka!
+welcome(); // Welcome Guest!
+
+// spraed operator (...)
+// It expands values one by one, mostly used in arrays and objects.
+const nums = [1,2,3];
+const newNums = [...nums,4,5]; // old array values copied + new values added
+console.log(newNums);
+
+// Output:
+// [1,2,3,4,5]
+
+// spread operator with object copies old object values into new object.
+const obj = {
+   name:"Hrithicka"
+};
+const updatedObj = {
+   ...obj,
+   age:22
+};
+console.log(updatedObj);
+
+// Output:
+// {name:"Hrithicka", age:22}
+
+// Rest parameter (...)
+// rest collects multiple values into single array and used mostly in functions.
+const cal = {
+   sum:(...nums) => nums.reduce((a,b) => a+b,0)
+};
+
+console.log(cal.sum(1,2,3,4));
+
+// Output:
+// 10
+// here ...nums collects all numbers into array.
+
+// destructuring
+// It means taking values from array/object and storing directly into variables.
+// Normal way
+const arr = ["Hrithicka","Agnes","Akshayaa"];
+const first = arr[0];
+const second = arr[1];
+console.log(first);
+
+// array destructuring
+// values taken based on positions.
+const [one,two,three] = [10,20,30];
+
+console.log(one); // 10
+console.log(two); // 20
+console.log(three); // 30
+
+// Rest with destructuring
+// remaining values stored into array.
+const [a,b,...c] = [1,2,3,4,5];
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // [3,4,5]
+
+// Object destructuring
+// values taken based on key names.
+const person = {
+   name:"Hrithicka",
+   age:22
+};
+const {name, age} = person;
+
+console.log(name); // Hrithicka
+console.log(age); // 22
+
+// Key difference
+
+// Array destructuring = position based
+// Object destructuring = key based
+
+
+// Astronaut Data Fetching Using API and Axios
+
+// HTML basics were used to create the webpage structure with button, text, and list elements.
+// JavaScript functions and async-await were used to fetch astronaut data from an API asynchronously without stopping program execution.
+// Axios dependency was used to send API requests and receive JSON data easily from the server.
+// await axios.get() is used inside an async function to wait until the API data is received.
+// axios.get() sends request to API
+// await pauses the function until response comes
+// async allows use of await
+// CDN → external online library link
+// response.data → actual API data
+// package.json → stores project dependencies
+// .gitignore → ignores unnecessary files from GitHub upload
+// DOM manipulation was used to dynamically display astronaut names and total count inside the webpage.
+// Event handling using onclick was used to run the function when the user clicks the button.
+// Array methods, arrow functions, and template literals were used to extract data, simplify functions, and display dynamic content neatly.
