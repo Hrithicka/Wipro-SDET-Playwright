@@ -173,15 +173,15 @@ id = "abc";
 
 // INTERSECTION TYPE (&)
 // Combines multiple types into one.
-type User = {
+type Userr = {
    name: string;
 };
 
-type Admin = {
+type Adminn = {
    role: string;
 };
 
-type SuperUser = User & Admin;
+type SuperUser = Userr & Adminn;
 
 // ARRAY WITH MULTIPLE TYPES
 // Array can store multiple datatypes.
